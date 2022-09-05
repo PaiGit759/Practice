@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <title>Practice group 4</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="main.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <nav class="nav">
+    <div class="dropdown">
+      <button onclick="myFunction()" class="dropbtn" id="vvv">Viewing cats</button>
+      <div id="myDropdown" class="dropdown-content">
+        <a href="#" id="ttt">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+
+    <div>
+      <button class="dropbtn" id="addCat">Add cat</button>
+    </div>
+
+    <div>
+      <button class="dropbtn" id="addCat">About</button>
+    </div>
+
+    <div>
+      <button class="dropbtn" id="addCat">Contact</button>
+    </div>
+
+
+  </nav>
+
+
+  <!-- Форма для просмотра и добавления кошек -->
+  <!-- Структура кошек : Имя, ДатаРождения, Порода, Цвет, Вес, Фото -->
+
+  <form class="exsample1" id="formForCats">
+    <label for="catName"> Cat name </label>
+    <input type="text" id="catName" pattern="[A-Za-zА-Яа-я /s]{3,30}" style="width: 200px;">
+
+    <label for="catDateOfBirth"> Date of Birth </label>
+    <input type="date" id="catDateOfBirth" style="width: 80px;">
+
+    <input type="submit">
+
+  </form>
+
+
+
+  <script src="main.js"></script>
+
+</body>
+
+</html>

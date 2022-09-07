@@ -1,10 +1,11 @@
-let stringBase64;
-let stringStorage;
+var stringBase64;
+var stringStorage;
 var file;
 var prstr;
 var listCats;//= 'Barcelona~1|Everest~2|Tom~3|Rafail~4|Maya~5';
 var storedFotoValue;
 var storedDateValue;
+
 
 function encodeImageFileAsURL(element) {
   file = element.files[0];
@@ -82,7 +83,7 @@ window.onclick = function (event) {
 
     storedFotoValue = localStorage.getItem('storedFotoValue');
     arr = storedFotoValue.split(' ');
-    document.getElementById("foto").src = arr[1];
+    document.getElementById("foto").src = arr[strIndex];
 
 
     aaa = 9;
@@ -171,6 +172,8 @@ function buttonOnclickUpAddCat() {
   formForCats = document.getElementById("formForCats").reset();
   document.getElementById("submitButton").style = 'display: inline-block;';
   document.getElementById("onloadfile").style = 'display: inline-block;';
+  document.getElementById("foto").src = "";
+  stringBase64 = "";
 
 }
 /* 
@@ -178,4 +181,27 @@ function buttonOnclickUpAddCat() {
 localStorage.setItem('storedFotoValue',"");
 localStorage.setItem('storedDateValue',""); 
  */
+
+if (localStorage.getItem('listCats') == null) { 
+localStorage.setItem('listCats',"") 
+};
+
+if (localStorage.getItem('storedFotoValue') == null) { 
+  localStorage.setItem('storedFotoValue',"") 
+};
+
+if (localStorage.getItem('storedDateValue') == null) {
+  localStorage.setItem('storedDateValue',"") 
+};
+
 changeListMenuCat();
+/* 
+jjjjjj = localStorage.getItem('jjjjjj');
+
+if (jjjjjj == null) { alert("*****")
+localStorage.setItem('jjjjjj',""); 
+
+}
+
+aaa = 9;
+ */

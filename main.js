@@ -2,7 +2,7 @@ var stringBase64;
 var stringStorage;
 var file;
 var prstr;
-var listCats;//= 'Barcelona~1|Everest~2|Tom~3|Rafail~4|Maya~5';
+var listCats;
 var storedFotoValue;
 var storedDateValue;
 
@@ -27,13 +27,13 @@ function UploadFile(index = 0) {
     alert("Index is outside the array")
     return
   }
-  document.getElementById("foto").src = arr[index];//stringBase64;
+  document.getElementById("foto").src = arr[index];
 }
 
 function buttonOnclickUpload(index = 2) {
   stringStorage = localStorage.getItem('storedFotoValue');
   arr = stringStorage.split(' ');
-  document.getElementById("foto").src = arr[index];//stringBase64;
+  document.getElementById("foto").src = arr[index];
 }
 
 function buttonOnclickSave() {
@@ -59,8 +59,7 @@ window.onclick = function (event) {
 
   if (catId.includes('elCat')) {
     strIndex = catId.replace('elCat', '');
-    //    alert(catId + '=' + strIndex)
-    //выведем данные кошек
+     //выведем данные кошек
 
     listCats = localStorage.getItem('listCats');
     arr = listCats.split('|');
@@ -84,12 +83,10 @@ window.onclick = function (event) {
     storedFotoValue = localStorage.getItem('storedFotoValue');
     arr = storedFotoValue.split(' ');
     document.getElementById("foto").src = arr[strIndex];
-
-
-    aaa = 9;
   };
 
-  if (!event.target.matches('.dropbtn')) {
+  if (!event.target.matches('.nav_link')) {
+
     var dropdowns = document.getElementsByClassName("dropdown-content");
     var i;
     for (i = 0; i < dropdowns.length; i++) {
@@ -100,7 +97,6 @@ window.onclick = function (event) {
     }
   }
 }
-
 
 function changeListMenuCat() {
   listMenuCat = document.getElementById("myDropdown");
@@ -176,32 +172,17 @@ function buttonOnclickUpAddCat() {
   stringBase64 = "";
 
 }
-/* 
- localStorage.setItem('listCats', "");
-localStorage.setItem('storedFotoValue',"");
-localStorage.setItem('storedDateValue',""); 
- */
 
-if (localStorage.getItem('listCats') == null) { 
-localStorage.setItem('listCats',"") 
+if (localStorage.getItem('listCats') == null) {
+  localStorage.setItem('listCats', "")
 };
 
-if (localStorage.getItem('storedFotoValue') == null) { 
-  localStorage.setItem('storedFotoValue',"") 
+if (localStorage.getItem('storedFotoValue') == null) {
+  localStorage.setItem('storedFotoValue', "")
 };
 
 if (localStorage.getItem('storedDateValue') == null) {
-  localStorage.setItem('storedDateValue',"") 
+  localStorage.setItem('storedDateValue', "")
 };
 
 changeListMenuCat();
-/* 
-jjjjjj = localStorage.getItem('jjjjjj');
-
-if (jjjjjj == null) { alert("*****")
-localStorage.setItem('jjjjjj',""); 
-
-}
-
-aaa = 9;
- */

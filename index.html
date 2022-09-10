@@ -2,46 +2,45 @@
 <html>
 
 <head>
-
   <title>Practice group 4</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet">
   <link href="main.css" rel="stylesheet">
-
 </head>
 
 <body>
 
-  <nav class="nav">
-    <div class="dropdown">
-      <button onclick="myFunction()" class="dropbtn" id="vvv">Viewing cats</button>
-      <div id="myDropdown" class="dropdown-content">
-        <a href="#" id="ttt">Home</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
+  <header class="header">
+    <nav class="navbar ">
+
+      <a href="#" class="nav_logo"><img src="cat_logo1.png" alt="logo" width="30px" height="30px"></a>
+      Practice group 4 Maria and Anatolii
+      <ul class="nav_menu ">
+         
+ <li class="nav_item"> <span href="" class="nav_link" id="addCat" onclick="buttonOnclickUpAddCat()">Add catt </span></li>
+ 
+ <div class="dropdown">
+  <li onclick="myFunction()" class="nav_link " >Viewing cats</li>
+  <div id="myDropdown" class="dropdown-content">
+  </div> 
+</div>
+
+ <li class="nav_item"><a href="" class="nav_link">About</a></li>
+        <li class="nav_item"><a href="" class="nav_link">Contact</a></li>
+      </ul>
+      <div class="hamb">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
       </div>
-    </div>
-
-    <div>
-      <button class="dropbtn" id="addCat" onclick="buttonOnclickUpAddCat()" >Add cat</button>
-    </div>
-
-    <div>
-      <button class="dropbtn" id="addCat">About</button>
-    </div>
-
-    <div>
-      <button class="dropbtn" id="addCat">Contact</button>
-    </div>
-
-
-  </nav>
-
+    </nav>
+  </header>
 
   <!-- Форма для просмотра и добавления кошек -->
   <!-- Структура кошек : Имя, ДатаРождения, Где живет, Порода, Цвет, Вес, Фото -->
 
-  <form class="exsample1" id="formForCats" onsubmit="onclickVsubmit()")>
+  <form class="exsample1" id="formForCats" onsubmit="onclickVsubmit()" )>
     <label for="catName"> Cat name </label>
     <input type="text" id="catName" pattern="[A-Za-zА-Яа-я /s]{3,30}" style="width: 150px;" required>
 
@@ -58,21 +57,40 @@
     <input type="text" id="catColor" pattern="[A-Za-zА-Яа-я /s]{3,50}" style="width: 150px;">
 
     <label for="catWeight"> The weight </label>
-    <input type="number" step="any" id="catWeight"  style="width: 150px;">
+    <input type="number" step="any" id="catWeight" style="width: 150px;">
 
     <div class="exsample2">
-      <img src="" id="foto" style="width:40px;height: 50px;">
+      <img src="" id="foto" class="imgsrc" style="width:40px;height: 50px;">
 
- <input type="file" class="custom-file-input" id="onloadfile" style="display: none;" onchange="encodeImageFileAsURL(this)" accept=".jpg, .jpeg, .png ,.ico">
-<div style="font-size:12px;"> File size is less than 100 kB </style></div>
+      <input type="file" class="custom-file-input" id = "onloadfile" style = "display : none;"
+        onchange="encodeImageFileAsURL(this)" accept=".jpg, .jpeg, .png ,.ico">
+      <div style="font-size:12px;"> File size is less than 100 kB </style>
+      </div>
     </div>
 
-  
   <div>
-  <input type="submit" id = "submitButton" style="display: none;">
-</div>
+      <input type="submit" id="submitButton" style = "display : none;">
+    </div>
 
   </form>
+
+  <footer>
+    <div class="footer">
+      <div class="info-foot">
+        <h3>Contact</h3>
+        <p>Adress : Stockholm, str. Sveavägen 45,</p>
+        <p>Email : volunteer.stkhlm@gmail.com</p>
+        <p>Phone: 010 340 5679 </p>
+      </div>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+
+      </div>
+    </div>
+
+  </footer>
 
   <script src="main.js"></script>
 

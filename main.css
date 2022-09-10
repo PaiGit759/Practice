@@ -1,5 +1,5 @@
 body {
-    background-color: rgba(227, 214, 197, 0.664);
+background-color: rgb(150, 150, 202);
 }
 
 .exsample {
@@ -52,7 +52,7 @@ body {
 .exsample1 {
     position: relative;
     left:  30%;
-    top: 200px;
+    top: 150px;
     width: 30%;
     height: 300px;
     background-color:  rgba(227, 214, 197, 0.664);
@@ -68,8 +68,8 @@ body {
     position: absolute;
     top: 0;
     right: 5%;
-    width: 20%;
-    height: 100px;
+    width: 25%;
+    height: 110px;
     background-color: rgb(138, 212, 212);
     padding-top: 5px;
     padding-left: 5px;
@@ -104,18 +104,19 @@ label {
     display: inline-block;
   } 
 
-  .nav {
+ /*  .nav {
     position: fixed;
     top: 0;
     left: 0;
     display: flex;
   } 
-
+ */
 
   .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #f1f1f1;
+    top: 60Px;
+    background-color:rgb(150, 150, 202);
     min-width: 100px;
     overflow: auto;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
@@ -134,13 +135,9 @@ label {
   }
 
   .show {
-    display: block;
+    display: inline-block;
   }
-/* 
-.file-upload  input {
-  opacity: 1;
-  }
- */
+
   .custom-file-input {
     color: transparent;
   }
@@ -173,6 +170,90 @@ label {
     background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9); 
   }
 
-/*
- 
- */
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+   list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+  .header {
+    position: fixed;
+    width: 100%;
+    background-color: rgb(74, 80, 184);
+}
+
+.navbar {
+   display: flex ;
+   top: 200px;
+   justify-content: space-between;
+   align-items: center;
+   height: 3rem;
+}
+
+.hamb {
+    display: none;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: 0.3s;
+    background-color: #101010;
+}
+
+.nav_menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav_link {
+    font-size: 26px;
+    font-weight: 400;
+    color: #fff ;
+    margin-right: 50px;
+}
+
+.nav_link:hover {
+    text-decoration: underline;
+}
+
+  .footer {
+    box-shadow: 0 0 7px  rgba(48, 37, 121, 0.5);
+    position: fixed;
+    text-align: center;
+    bottom:0;
+    width: 100%;
+    height: 10%;
+    font-size: 12px; 
+}
+
+.info-foot{
+    right: 15%;
+    bottom: 10%;
+    padding: 0px;
+}
+.social-links a {
+    text-align: center;
+    color: #282978;
+    padding: 10px;
+    padding-top: 40px;
+    font-size: 14px;
+}
+  

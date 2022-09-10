@@ -435,6 +435,557 @@ label {
 /*
  
  */
+ 
+ 
+ 20220910
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Practice group 4</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet">
+  <link href="main.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <header class="header">
+    <nav class="navbar ">
+
+      <a href="#" class="nav_logo"><img src="cat_logo1.png" alt="logo" width="30px" height="30px"></a>
+      Practice group 4 Maria and Anatolii
+      <ul class="nav_menu ">
+         
+ <li class="nav_item"> <span href="" class="nav_link" id="addCat" onclick="buttonOnclickUpAddCat()">Add catt </span></li>
+ 
+ <div class="dropdown">
+  <li onclick="myFunction()" class="nav_link " >Viewing cats</li>
+  <div id="myDropdown" class="dropdown-content">
+  </div> 
+</div>
+
+ <li class="nav_item"><a href="" class="nav_link">About</a></li>
+        <li class="nav_item"><a href="" class="nav_link">Contact</a></li>
+      </ul>
+      <div class="hamb">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Форма для просмотра и добавления кошек -->
+  <!-- Структура кошек : Имя, ДатаРождения, Где живет, Порода, Цвет, Вес, Фото -->
+
+  <form class="exsample1" id="formForCats" onsubmit="onclickVsubmit()" )>
+    <label for="catName"> Cat name </label>
+    <input type="text" id="catName" pattern="[A-Za-zА-Яа-я /s]{3,30}" style="width: 150px;" required>
+
+    <label for="catDateOfBirth"> Date of Birth </label>
+    <input type="date" id="catDateOfBirth" style="width: 100px;" required>
+
+    <label for="catWhere"> Where does it live </label>
+    <input type="text" id="catWhere" pattern="[A-Za-zА-Яа-я /s]{3,50}" style="width: 150px;">
+
+    <label for="catBreed"> Breed </label>
+    <input type="text" id="catBreed" pattern="[A-Za-zА-Яа-я /s]{3,50}" style="width: 150px;">
+
+    <label for="catColor"> Color </label>
+    <input type="text" id="catColor" pattern="[A-Za-zА-Яа-я /s]{3,50}" style="width: 150px;">
+
+    <label for="catWeight"> The weight </label>
+    <input type="number" step="any" id="catWeight" style="width: 150px;">
+
+    <div class="exsample2">
+      <img src="" id="foto" class="imgsrc" style="width:40px;height: 50px;">
+
+      <input type="file" class="custom-file-input" id = "onloadfile" style = "display : none;"
+        onchange="encodeImageFileAsURL(this)" accept=".jpg, .jpeg, .png ,.ico">
+      <div style="font-size:12px;"> File size is less than 100 kB </style>
+      </div>
+    </div>
+
+  <div>
+      <input type="submit" id="submitButton" style = "display : none;">
+    </div>
+
+  </form>
+
+  <footer>
+    <div class="footer">
+      <div class="info-foot">
+        <h3>Contact</h3>
+        <p>Adress : Stockholm, str. Sveavägen 45,</p>
+        <p>Email : volunteer.stkhlm@gmail.com</p>
+        <p>Phone: 010 340 5679 </p>
+      </div>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+
+      </div>
+    </div>
+
+  </footer>
+
+  <script src="main.js"></script>
+
+</body>
+
+</html>
+
+body {
+background-color: rgb(150, 150, 202);
+}
+
+.exsample {
+    top:5%;
+}
+
+.exsample1 {
+    top: 28%;
+}
+
+.exsample2 {
+    top: 16%;
+}
+
+.exsample3 {
+    top: 24%;
+}
+
+.exsample4 {
+    top: 32%;
+}
+
+.exsample5 {
+    top: 40%;
+}
+
+.exsample6 {
+    top: 48%;
+}
+
+.exsample,
+.exsample3,
+.exsample4,
+.exsample5,
+.exsample6 {
+    position: absolute;
+    left: 50%;
+    width: 20%;
+    height: 130px;
+    background-color: rgb(138, 212, 212);
+    padding-top: 5px;
+    padding-left: 0px;
+    padding-bottom: 10px;
+    font-size: x-large;
+    margin-top: 5px;
+    text-align: center;
+}
+
+
+.exsample1 {
+    position: relative;
+    left:  30%;
+    top: 150px;
+    width: 30%;
+    height: 300px;
+    background-color:  rgba(227, 214, 197, 0.664);
+    padding-top: 5px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    font-size: x-large;
+    margin-top: 5px;
+    text-align: left;
+}
+
+.exsample2 {
+    position: absolute;
+    top: 0;
+    right: 5%;
+    width: 25%;
+    height: 110px;
+    background-color: rgb(138, 212, 212);
+    padding-top: 5px;
+    padding-left: 5px;
+    padding-bottom: 10px;
+    font-size: x-large;
+    margin-top: 15px;
+    text-align: left;
+}
+
+label {
+    display: block;
+}
+
+
+.dropbtn {
+    background-color: #86939c;
+    color: white;
+    padding: 3px;
+    font-size: medium;
+    border: solid 1px white;
+    cursor: pointer;
+  }
+
+
+  .dropbtn:hover, .dropbtn:focus {
+    background-color: #4faaeb;
+    color: aqua;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  } 
+
+ /*  .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+  } 
+ */
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    top: 60Px;
+    background-color:rgb(150, 150, 202);
+    min-width: 100px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  .dropdown a:hover {
+    background-color: #ddd;
+  }
+
+  .show {
+    display: inline-block;
+  }
+
+  .custom-file-input {
+    color: transparent;
+  }
+  .custom-file-input::-webkit-file-upload-button {
+    visibility: hidden;
+  }
+  .custom-file-input::before {
+    content: 'Choose a file';
+    color: black;
+    display: inline-block;
+    background: -webkit-linear-gradient(top, #f9f9f9, #e3e3e3);
+    border: 1px solid #999;
+    border-radius: 3px;
+    padding: 1px 3px;
+    outline: none;
+    white-space: nowrap;
+    /* -webkit-user-select: none; */
+    cursor: pointer;
+    text-shadow: 1px 1px #fff;
+    font-weight: 300;
+    font-size: 7pt;
+  }
+  .custom-file-input:hover::before {
+    border-color: black;
+  }
+  .custom-file-input:active {
+    outline: 0;
+  }
+  .custom-file-input:active::before {
+    background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9); 
+  }
+
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+   list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+  .header {
+    position: fixed;
+    width: 100%;
+    background-color: rgb(74, 80, 184);
+}
+
+.navbar {
+   display: flex ;
+   top: 200px;
+   justify-content: space-between;
+   align-items: center;
+   height: 3rem;
+}
+
+.hamb {
+    display: none;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: 0.3s;
+    background-color: #101010;
+}
+
+.nav_menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav_link {
+    font-size: 26px;
+    font-weight: 400;
+    color: #fff ;
+    margin-right: 50px;
+}
+
+.nav_link:hover {
+    text-decoration: underline;
+}
+
+  .footer {
+    box-shadow: 0 0 7px  rgba(48, 37, 121, 0.5);
+    position: fixed;
+    text-align: center;
+    bottom:0;
+    width: 100%;
+    height: 10%;
+    font-size: 12px; 
+}
+
+.info-foot{
+    right: 15%;
+    bottom: 10%;
+    padding: 0px;
+}
+.social-links a {
+    text-align: center;
+    color: #282978;
+    padding: 10px;
+    padding-top: 40px;
+    font-size: 14px;
+}
+  
+
+var stringBase64;
+var stringStorage;
+var file;
+var prstr;
+var listCats;
+var storedFotoValue;
+var storedDateValue;
+
+
+function encodeImageFileAsURL(element) {
+  file = element.files[0];
+  var reader = new FileReader();
+  reader.onloadend = function () {
+    console.log(file.name, reader.result)
+    stringBase64 = reader.result
+    document.getElementById("foto").src = stringBase64;
+  }
+  reader.readAsDataURL(file);
+}
+
+function UploadFile(index = 0) {
+  index = document.getElementById("indexOnloadFile").value;
+
+  stringStorage = localStorage.getItem('storedFotoValue');
+  arr = stringStorage.split(' ');
+  if (index >= arr.length) {
+    alert("Index is outside the array")
+    return
+  }
+  document.getElementById("foto").src = arr[index];
+}
+
+function buttonOnclickUpload(index = 2) {
+  stringStorage = localStorage.getItem('storedFotoValue');
+  arr = stringStorage.split(' ');
+  document.getElementById("foto").src = arr[index];
+}
+
+function buttonOnclickSave() {
+  if (file.size >= 100000) {
+    alert("File size must not exceed 100 KB");
+    return;
+  }
+  stringStorage = localStorage.getItem('storedFotoValue') + " " + stringBase64;
+  arr = stringStorage.split(' ');
+
+  localStorage.setItem('storedFotoValue', stringStorage);
+}
+
+// menu
+
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+window.onclick = function (event) {
+
+  catId = event.target.id;
+
+  if (catId.includes('elCat')) {
+    strIndex = catId.replace('elCat', '');
+     //выведем данные кошек
+
+    listCats = localStorage.getItem('listCats');
+    arr = listCats.split('|');
+    arr1 = arr[strIndex].split('~');
+
+    catName = arr1[0];
+    aaa = 9;
+
+    document.getElementById("catName").value = catName;
+
+    storedDateValue = localStorage.getItem('storedDateValue');
+    arr = storedDateValue.split('|');
+    arr1 = arr[strIndex].split('~');
+
+    document.getElementById("catDateOfBirth").value = arr1[0];
+    document.getElementById("catWhere").value = arr1[1];
+    document.getElementById("catBreed").value = arr1[2];
+    document.getElementById("catColor").value = arr1[3];
+    document.getElementById("catWeight").value = arr1[4];
+
+    storedFotoValue = localStorage.getItem('storedFotoValue');
+    arr = storedFotoValue.split(' ');
+    document.getElementById("foto").src = arr[strIndex];
+  };
+
+  if (!event.target.matches('.nav_link')) {
+
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+
+function changeListMenuCat() {
+  listMenuCat = document.getElementById("myDropdown");
+  listCats = localStorage.getItem('listCats');
+  arr = listCats.split('|');
+  arr.sort();
+  prstr = "";
+
+  for (i = 1; i < arr.length; i++) {
+    arr1 = arr[i].split('~');
+    prstr = prstr + '<a href="#" id="elCat' + arr1[1] + '" > ' + arr1[0] + '</a>';
+
+  }
+  listMenuCat.innerHTML = prstr;
+}
+
+function onclickVsubmit() {
+
+  //   список кошек
+  listCats = localStorage.getItem('listCats');
+  catName = document.getElementById("catName").value;
+  arr = listCats.split('|');
+  listCats = localStorage.getItem('listCats');
+  listCats = listCats + '|' + catName + '~' + (arr.length);
+  localStorage.setItem('listCats', listCats);
+  changeListMenuCat();
+
+  index = arr.length + 1;
+
+  //   список данных кошек 
+  storedDateValue = localStorage.getItem('storedDateValue');
+
+  catDateOfBirth = document.getElementById("catDateOfBirth").value;
+  catWhere = document.getElementById("catWhere").value;
+  catBreed = document.getElementById("catBreed").value;
+  catColor = document.getElementById("catColor").value;
+  catWeight = document.getElementById("catWeight").value;
+
+  storedDateValue = storedDateValue + '|' + catDateOfBirth + '~' + catWhere + '~' + catBreed + '~' + catColor + '~' + catWeight;
+  localStorage.setItem('storedDateValue', storedDateValue);
+
+  //   список фото кошек 
+  if (file == undefined) {
+    storedFotoValue = localStorage.getItem('storedFotoValue') + "no_foto";
+    localStorage.setItem('storedFotoValue', storedFotoValue);
+    formForCats = document.getElementById("formForCats").reset();
+    document.getElementById("foto").src = "";
+
+  }
+
+  if (file.size >= 100000) {
+    alert("File size must not exceed 100 KB");
+  }
+  else {
+    storedFotoValue = localStorage.getItem('storedFotoValue') + " " + stringBase64;
+    localStorage.setItem('storedFotoValue', storedFotoValue);
+  }
+
+  formForCats = document.getElementById("formForCats").reset();
+  document.getElementById("foto").src = "";
+
+  document.getElementById("submitButton").style = 'display: none;';
+  document.getElementById("onloadfile").style = 'display: none;';
+
+}
+
+function buttonOnclickUpAddCat() {
+
+  formForCats = document.getElementById("formForCats").reset();
+  document.getElementById("submitButton").style = 'display: inline-block;';
+  document.getElementById("onloadfile").style = 'display: inline-block;';
+  document.getElementById("foto").src = "";
+  stringBase64 = "";
+
+}
+
+if (localStorage.getItem('listCats') == null) {
+  localStorage.setItem('listCats', "")
+};
+
+if (localStorage.getItem('storedFotoValue') == null) {
+  localStorage.setItem('storedFotoValue', "")
+};
+
+if (localStorage.getItem('storedDateValue') == null) {
+  localStorage.setItem('storedDateValue', "")
+};
+
+changeListMenuCat();
 
 
 
